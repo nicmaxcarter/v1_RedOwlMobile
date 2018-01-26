@@ -9,8 +9,15 @@ import {
   Text,
   View,
   Image,
-  ImageBackground
+  ImageBackground,
+  Button,
+  TextInput,
+  TouchableOpacity,
+  TouchableNativeFeedback,
+  TouchableHighlight,
+  Alert
 } from "react-native";
+import LoginForm from "../components/js/LoginForm";
 
 export default class Login extends Component<{}> {
   render() {
@@ -26,7 +33,9 @@ export default class Login extends Component<{}> {
               source={require("../components/img/red_owl_emblem_red.png")}
             />
           </View>
-          <View style={styles.formContainer} />
+          <View style={styles.formContainer}>
+            <LoginForm navigation={this.props.navigation} />
+          </View>
         </ImageBackground>
       </View>
     );
@@ -35,7 +44,7 @@ export default class Login extends Component<{}> {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: "steelblue",
+    // backgroundColor: "steelblue",
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
@@ -43,7 +52,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "#F5FCFF"
   },
   background: {
-    backgroundColor: "skyblue",
+    // backgroundColor: "skyblue",
     flex: 1,
     flexDirection: "column",
     width: undefined,
@@ -52,7 +61,7 @@ const styles = StyleSheet.create({
     // alignItems: "center"
   },
   logoContainer: {
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
     flex: 0.75,
     flexDirection: "row",
     // alignItems: "stretch",
@@ -60,12 +69,13 @@ const styles = StyleSheet.create({
     paddingTop: 25
   },
   formContainer: {
-    backgroundColor: "red",
+    // backgroundColor: "red",
     flex: 1,
-    flexDirection: "column"
+    flexDirection: "column",
+    paddingBottom: 25
   },
   logoImg: {
-    backgroundColor: "powderblue",
+    // backgroundColor: "powderblue",
     flex: 0.55,
     width: undefined,
     height: undefined,

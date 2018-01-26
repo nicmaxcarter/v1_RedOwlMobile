@@ -1,14 +1,13 @@
 import React from "react";
-import { TabNavigator, StackNavigator } from "react-navigation";
-import { Icon } from "react-native-elements";
+import { StackNavigator } from "react-navigation";
 
 import Splash from "../screens/Splash";
 import Login from "../screens/Login";
 
 export const Root = StackNavigator(
   {
-    // Splash: { screen: Splash },
-    Login: { screen: Login }
+    Login: { screen: Login },
+    Splash: { screen: Splash }
   },
   {
     mode: "modal",
