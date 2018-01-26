@@ -4,6 +4,12 @@ import { Icon } from "react-native-elements";
 
 import App from "../screens/App";
 
-export const Root = StackNavigator({
-  Splash: { screen: App }
-});
+export const Root = StackNavigator(
+  {
+    Splash: { screen: App }
+  },
+  {
+    mode: "modal",
+    headerMode: "none"
+  }
+);
