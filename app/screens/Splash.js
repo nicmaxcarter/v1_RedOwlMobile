@@ -13,14 +13,7 @@ export default class Splash extends Component<{}> {
         <View style={styles.logoImgContainer}>
           <Image
             style={styles.logoImg}
-            source={require("../components/img/red_owl_emblem_red.png")}
-          />
-        </View>
-
-        <View style={styles.logoTxtImgContainer}>
-          <Image
-            style={styles.logoTxtImg}
-            source={require("../components/img/red_owl_text_only.png")}
+            source={require("../components/img/red_owl_emblem_and_text.png")}
           />
         </View>
       </View>
