@@ -6,7 +6,7 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, Image } from "react-native";
 
-export default class App extends Component<{}> {
+export default class Splash extends Component<{}> {
   render() {
     return (
       <View style={styles.mainContainer}>
