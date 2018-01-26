@@ -12,8 +12,8 @@ export default class Splash extends Component<{}> {
       <View style={styles.mainContainer}>
         <View style={styles.logoImgContainer}>
           <Image
-            style={styles.logoImg}
-            source={require("../components/img/red_owl_emblem_and_text.png")}
+            style={styles.splashLogo}
+            source={require("../components/img/Red_owl_emblem_and_text.png")}
           />
         </View>
       </View>
@@ -23,7 +23,7 @@ export default class Splash extends Component<{}> {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // backgroundColor: "steelblue",
+    backgroundColor: "steelblue",
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
@@ -31,32 +31,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5FCFF"
   },
   logoImgContainer: {
+    // backgroundColor: "black",
     flex: 1,
-    flexDirection: "row",
-    // alignItems: "flex-end",
-    justifyContent: "center",
-    paddingBottom: 10
+    flexDirection: "row"
   },
-  logoTxtImgContainer: {
-    flex: 1,
-    flexDirection: "row",
-    // alignItems: "stretch",
-    justifyContent: "center"
-  },
-  logoImg: {
+  splashLogo: {
     // backgroundColor: "powderblue",
-    flex: 0.55,
-    alignSelf: "flex-end",
-    width: 500,
-    height: 250,
-    resizeMode: "contain"
-  },
-  logoTxtImg: {
-    // backgroundColor: "skyblue",
-    flex: 0.7,
-    alignSelf: "flex-start",
-    width: 500,
-    height: 100,
+    flex: 0.65,
+    width: undefined,
+    height: undefined,
     resizeMode: "contain"
   }
 });
