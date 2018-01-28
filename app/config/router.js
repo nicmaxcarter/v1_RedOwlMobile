@@ -3,11 +3,13 @@ import { StackNavigator } from "react-navigation";
 
 import Splash from "../screens/Splash";
 import Login from "../screens/Login";
+import Dashboard from "../screens/Dashboard";
 
 export const Root = StackNavigator(
   {
-    Login: { screen: Login },
-    Splash: { screen: Splash }
+    // Dashboard: { screen: Dashboard },
+    Splash: { screen: Splash },
+    Login: { screen: Login }
   },
   {
     mode: "modal",

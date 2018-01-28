@@ -4,9 +4,17 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Image } from "react-native";
+import { Platform, StyleSheet, Text, View, Image, Alert } from "react-native";
 
 export default class Splash extends Component<{}> {
+  constructor(props) {
+    super(props);
+
+    setTimeout(() => {
+      this.props.navigation.navigate("Login");
+    }, 3000);
+  }
+
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -37,7 +45,7 @@ const styles = StyleSheet.create({
   },
   splashLogo: {
     // backgroundColor: "powderblue",
-    flex: 0.65,
+    flex: 0.55,
     width: undefined,
     height: undefined,
     resizeMode: "contain"
