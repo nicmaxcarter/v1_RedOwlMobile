@@ -1,5 +1,5 @@
 /**
- * Login page for Red Owl App
+ * Register page for Red Owl App
  */
 
 import React, { Component } from "react";
@@ -13,28 +13,32 @@ import {
   Button,
   TextInput,
   TouchableOpacity,
-  TouchableNativeFeedback,
-  TouchableHighlight,
   Alert
 } from "react-native";
-import LoginForm from "../components/js/LoginForm";
+import RegisterForm from "../components/js/RegisterForm";
 
-export default class Login extends Component<{}> {
+export default class Register extends Component<{}> {
   render() {
     return (
       <View style={styles.mainContainer}>
         <ImageBackground
           style={styles.background}
-          source={require("../components/img/login_bg_op1.jpg")}
+          source={require("../components/img/register_bg.jpg")}
         >
           <View style={styles.logoContainer}>
+            <View style={styles.leftOfLogo}>
+              <View style={styles.logoLine} />
+            </View>
             <Image
               style={styles.logoImg}
-              source={require("../components/img/red_owl_emblem_red.png")}
+              source={require("../components/img/red_owl_emblems_white_red.png")}
             />
+            <View style={styles.rightOfLogo}>
+              <View style={styles.logoLine} />
+            </View>
           </View>
           <View style={styles.formContainer}>
-            <LoginForm navigation={this.props.navigation} />
+            <RegisterForm navigation={this.props.navigation} />
           </View>
         </ImageBackground>
       </View>
@@ -49,37 +53,48 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "stretch"
-    // backgroundColor: "#F5FCFF"
   },
   background: {
-    // backgroundColor: "skyblue",
     flex: 1,
     flexDirection: "column",
     width: undefined,
     height: undefined
-    // resizeMode: "cover",
-    // alignItems: "center"
   },
   logoContainer: {
-    // backgroundColor: "blue",
-    flex: 0.75,
+    flex: 0.15,
     flexDirection: "row",
-    // alignItems: "stretch",
     justifyContent: "center",
-    paddingTop: 25
+    paddingTop: 15,
+    paddingHorizontal: 10
   },
-  formContainer: {
-    // backgroundColor: "red",
+  leftOfLogo: {
     flex: 1,
     flexDirection: "column",
-    paddingTop: 20,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  rightOfLogo: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  formContainer: {
+    flex: 1,
+    flexDirection: "column",
+    paddingTop: 15,
     paddingBottom: 25
   },
   logoImg: {
-    // backgroundColor: "powderblue",
-    flex: 0.55,
+    flex: 0.5,
     width: undefined,
     height: undefined,
     resizeMode: "contain"
+  },
+  logoLine: {
+    height: 3,
+    width: undefined,
+    alignSelf: "stretch",
+    backgroundColor: "#D14827"
   }
 });

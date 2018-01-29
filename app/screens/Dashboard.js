@@ -16,6 +16,7 @@ import {
   TouchableNativeFeedback,
   TouchableHighlight
 } from "react-native";
+import OrangeBtn from "../components/js/OrangeBtn";
 
 export default class Login extends Component<{}> {
   render() {
@@ -25,14 +26,42 @@ export default class Login extends Component<{}> {
           style={styles.background}
           source={require("../components/img/dashboard_bg.jpg")}
         >
-          <Text style={styles.title}>YOUR REWARDS</Text>
-          <Image
-            style={styles.rewardsImg}
-            source={require("../components/img/5_9_reward_progression.png")}
-          />
-          <TouchableHighlight style={styles.menuBtn}>
-            <Text>NEW ORDER</Text>
-          </TouchableHighlight>
+          <View style={styles.rewardsContainer}>
+            <Text style={styles.title}>YOUR REWARDS</Text>
+            <Image
+              style={styles.rewardsImg}
+              source={require("../components/img/5_9_reward_progression.png")}
+            />
+          </View>
+          <View style={styles.menuContainer}>
+            <OrangeBtn
+              navigation={this.props.navigation}
+              page="Splash"
+              title="NEW ORDER"
+            />
+            <OrangeBtn
+              navigation={this.props.navigation}
+              page="Splash"
+              title="MY FAVORITES"
+            />
+            <OrangeBtn
+              navigation={this.props.navigation}
+              page="Splash"
+              title="ORDER HISTORY"
+            />
+            <OrangeBtn
+              navigation={this.props.navigation}
+              page="Splash"
+              title="MANAGE PROFILE"
+            />
+            <View style={styles.signOutContainer}>
+              <View style={styles.centerLine} />
+              <TouchableOpacity style={styles.signOutTouchable}>
+                <Text style={styles.signOut}>SIGN OUT</Text>
+              </TouchableOpacity>
+              <View style={styles.centerLine} />
+            </View>
+          </View>
         </ImageBackground>
       </View>
     );
@@ -46,18 +75,14 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "stretch"
-    // backgroundColor: "#F5FCFF"
   },
   background: {
-    // backgroundColor: "skyblue",
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
     width: undefined,
     height: undefined,
     paddingHorizontal: 40
-    // resizeMode: "cover",
-    // alignItems: "center"
   },
   title: {
     paddingTop: 30,
@@ -67,39 +92,34 @@ const styles = StyleSheet.create({
     color: "black"
   },
   rewardsImg: {
-    flex: 0.4,
+    marginTop: 25,
+    flex: 0.9,
     resizeMode: "contain"
   },
-  menuBtn: {
-    alignItems: "center",
-    backgroundColor: "white",
-    paddingVertical: 10,
-    marginVertical: 7,
-    borderWidth: 3,
-    borderColor: "#D14827",
-    alignSelf: "stretch"
+  rewardsContainer: {
+    flex: 1.2
   },
-
-  //---------------------------------------
-  logoContainer: {
-    // backgroundColor: "blue",
-    flex: 0.75,
-    flexDirection: "row",
-    // alignItems: "stretch",
-    justifyContent: "center",
-    paddingTop: 25
-  },
-  formContainer: {
-    // backgroundColor: "red",
+  menuContainer: {
     flex: 1,
-    flexDirection: "column",
-    paddingBottom: 25
+    width: "100%"
   },
-  logoImg: {
-    // backgroundColor: "powderblue",
-    flex: 0.55,
-    width: undefined,
-    height: undefined,
-    resizeMode: "contain"
+  signOutContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 14,
+    opacity: 0.5
+  },
+  centerLine: {
+    flex: 1,
+    backgroundColor: "#333333",
+    height: 2
+  },
+  signOutTouchable: {
+    flex: 1
+  },
+  signOut: {
+    textAlign: "center",
+    justifyContent: "center",
+    color: "#333333"
   }
 });

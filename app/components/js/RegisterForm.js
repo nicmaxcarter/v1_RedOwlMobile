@@ -14,7 +14,7 @@ import {
   Alert
 } from "react-native";
 
-export default class LoginForm extends Component {
+export default class RegisterForm extends Component {
   onLoginPress = () => {
     this.props.navigation.navigate("Dashboard");
     // Alert.alert("Clicked");
@@ -22,6 +22,16 @@ export default class LoginForm extends Component {
   render() {
     return (
       <View style={formStyles.container}>
+        <TextInput
+          style={formStyles.input}
+          placeholderTextColor="#C6CCCD"
+          returnKeyType="next"
+          underlineColorAndroid="transparent"
+          placeholder="NAME"
+          onSubmitEditing={() => this.nameInput.focus()}
+          autoCapitalize="none"
+          aucoCorrect={false}
+        />
         <TextInput
           style={formStyles.input}
           placeholderTextColor="#C6CCCD"
@@ -42,28 +52,30 @@ export default class LoginForm extends Component {
           placeholder="PASSWORD"
           ref={input => (this.passwordInput = input)}
         />
+        <TextInput
+          style={formStyles.input}
+          secureTextEntry={true}
+          placeholderTextColor="#C6CCCD"
+          returnKeyType="go"
+          underlineColorAndroid="transparent"
+          placeholder="CONFIRM PASSWORD"
+          ref={input => (this.confirmPasswordInput = input)}
+        />
+        <TextInput
+          style={formStyles.input}
+          secureTextEntry={true}
+          placeholderTextColor="#C6CCCD"
+          returnKeyType="go"
+          underlineColorAndroid="transparent"
+          placeholder="MOBILE NUMBER"
+          ref={input => (this.mobileNumberInput = input)}
+        />
         <View style={formStyles.divider} />
         <TouchableOpacity
           onPress={this.onLoginPress}
-          style={formStyles.loginButtonContainer}
+          style={formStyles.registerButtonContainer}
         >
-          <Text style={formStyles.loginButtonText}>LOGIN</Text>
-        </TouchableOpacity>
-        <View style={formStyles.forgotOrRegister}>
-          <TouchableOpacity>
-            <Text>Forgot Password?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              this.props.navigation.navigate("Register");
-            }}
-          >
-            <Text>Register Here</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={formStyles.divider} />
-        <TouchableOpacity style={formStyles.guestButtonContainer}>
-          <Text style={formStyles.guestButtonText}>CONTINUE AS GUEST</Text>
+          <Text style={formStyles.registerButtonText}>REGISTER</Text>
         </TouchableOpacity>
         <Text style={formStyles.privacyPolicy}>
           By continuing, you accept our{" "}
@@ -85,7 +97,8 @@ const formStyles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     paddingHorizontal: 40,
-    paddingVertical: 10
+    paddingVertical: 10,
+    justifyContent: "space-between"
   },
   input: {
     backgroundColor: "white",
@@ -98,14 +111,14 @@ const formStyles = StyleSheet.create({
     borderColor: "#C6CCCD",
     textAlign: "center"
   },
-  loginButtonContainer: {
+  registerButtonContainer: {
     backgroundColor: "#C6CCCD",
     paddingVertical: 10,
     marginVertical: 7,
     borderWidth: 2,
     borderColor: "white"
   },
-  loginButtonText: {
+  registerButtonText: {
     textAlign: "center",
     color: "#333333",
     fontWeight: "700"
