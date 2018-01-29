@@ -7,7 +7,7 @@ import Dashboard from "../screens/Dashboard";
 
 export const Root = StackNavigator(
   {
-    // Dashboard: { screen: Dashboard },
+    Dashboard: { screen: Dashboard },
     Splash: { screen: Splash },
     Login: { screen: Login }
   },

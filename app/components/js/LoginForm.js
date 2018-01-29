@@ -16,7 +16,7 @@ import {
 
 export default class LoginForm extends Component {
   onLoginPress = () => {
-    this.props.navigation.navigate("Splash");
+    this.props.navigation.navigate("Dashboard");
     // Alert.alert("Clicked");
   };
   render() {
