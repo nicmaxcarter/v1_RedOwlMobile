@@ -6,13 +6,16 @@ import Login from "../screens/Login";
 import Dashboard from "../screens/Dashboard";
 import PrivacyPolicy from "../screens/PrivacyPolicy";
 import Register from "../screens/Register";
+import NewOrder from '../screens/NewOrder';
 
 export const Root = StackNavigator(
   {
+    NewOrder: { screen: NewOrder },
+    Dashboard: { screen: Dashboard },
     Splash: { screen: Splash },
     Login: { screen: Login },
     Register: { screen: Register },
-    Dashboard: { screen: Dashboard },
+    
     PrivacyPolicy: { screen: PrivacyPolicy }
   },
   {
